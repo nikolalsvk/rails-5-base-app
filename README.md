@@ -1,24 +1,24 @@
-# README
+# rails-5-base-app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Base Rails 5 web application to jump start your idea/project
 
 Things you may want to cover:
 
 * Ruby version
+  2.4.0
 
-* System dependencies
+* Rails version
+  5.0.1
 
 * Configuration
+  checkout branch [bind-default-ip-for-rails-server](https://github.com/nikolalsvk/rails-5-base-app/tree/bind-default-ip-for-rails-server)
+  if you have trouble running this app inside Vagrant
 
-* Database creation
-
-* Database initialization
+  It binds rails server to 0.0.0.0 so you can see your app in browser from
+  Vagrant
 
 * How to run the test suite
+  Rails advises using `bin/rails test`
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Proudly tested on Semaphore
+[![Build Status](https://semaphoreci.com/api/v1/nikolalsvk/rails-5-base-app/branches/master/badge.svg)](https://semaphoreci.com/nikolalsvk/rails-5-base-app)
