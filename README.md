@@ -1,6 +1,6 @@
 # rails-5-base-app
 
-Base Rails 5 web application to jump start your idea/project
+*Dockerized* Base Rails 5 web application to jump start your idea/project
 
 Things you may want to cover:
 
