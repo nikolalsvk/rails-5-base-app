@@ -14,3 +14,4 @@ COPY Gemfile.lock /usr/src/app/
 RUN bundle install
 
 COPY . /usr/src/app
+
