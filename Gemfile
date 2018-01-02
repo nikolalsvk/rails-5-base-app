@@ -39,6 +39,20 @@ group :development, :test do
   gem 'byebug', platform: :mri
 end
 
+group :test do
+  # Integration testing with Cucumber
+  gem 'cucumber-rails', :require => false
+  # Does cleaning of the database in test environment
+  gem 'database_cleaner'
+  # PhantomJS - headless browser
+  gem 'phantomjs', :require => 'phantomjs/poltergeist'
+  # Driver for manipulating a browser
+  gem 'poltergeist'
+
+  # RSpec - testing framework
+  gem 'rspec-rails'
+end
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
