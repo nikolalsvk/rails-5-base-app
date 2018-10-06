@@ -8,5 +8,6 @@ Rails.application.routes.draw do
     get :show_no_jquery
 
     get :wave
+    post :bump
   end
 end

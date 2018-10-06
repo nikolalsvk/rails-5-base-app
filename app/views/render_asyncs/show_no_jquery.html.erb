@@ -4,6 +4,16 @@
   jQuery: <script>document.write(window.jQuery)</script>
 </p>
 
+<p>Wave:</p>
 <%= render_async wave_render_async_path do %>
-  ...Loading
+  ...Loading <%= wave_render_async_path %>
+<% end %>
+
+<br>
+<p>Bump:</p>
+<%= render_async bump_render_async_path,
+                 method: 'POST',
+                 data: { fresh: 'AF' },
+                 headers: { 'Content-Type': 'text' } do %>
+  ...Loading <%= bump_render_async_path %>
 <% end %>
