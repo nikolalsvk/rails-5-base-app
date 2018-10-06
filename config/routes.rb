@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   resource :render_async, :only => [:show] do
     get :show_no_jquery
 
-    get :wave
+    get  :wave
     post :bump
+    get  :error
   end
 end

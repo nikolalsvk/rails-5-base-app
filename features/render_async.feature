@@ -16,6 +16,16 @@ Feature: render_async loading partials
     Then I should see that event got dispatched
 
   @javascript
+  Scenario: Loading error message without jQuery
+    When I visit page with render_async and without jQuery
+    Then I should see the error message
+
+  @javascript
+  Scenario: Emitting error event without jQuery
+    When I visit page with render_async and without jQuery
+    Then I should see that error event got dispatched
+
+  @javascript
   Scenario: Loading a partial with jQuery
     When I visit page with render_async and with jQuery
     Then I should see the GET partial load
@@ -29,3 +39,13 @@ Feature: render_async loading partials
   Scenario: Emitting an event with jQuery
     When I visit page with render_async and with jQuery
     Then I should see that event got dispatched
+
+  @javascript
+  Scenario: Loading error message with jQuery
+    When I visit page with render_async and with jQuery
+    Then I should see the error message
+
+  @javascript
+  Scenario: Emitting error event with jQuery
+    When I visit page with render_async and with jQuery
+    Then I should see that error event got dispatched

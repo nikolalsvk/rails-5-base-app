@@ -20,3 +20,11 @@ end
 Then("I should see that event got dispatched") do
   expect(page).to have_text("Event dispatched!")
 end
+
+Then("I should see the error message") do
+  expect(page).to have_text("Sorry for the error :(")
+end
+
+Then("I should see that error event got dispatched") do
+  expect(page).to have_text("Error event dispatched!")
+end

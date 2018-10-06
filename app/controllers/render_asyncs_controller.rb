@@ -21,4 +21,9 @@ class RenderAsyncsController < ApplicationController
   def bump
     @body = request.body.read
   end
+
+  # GET /render_async/error
+  def error
+    head :not_found
+  end
 end
