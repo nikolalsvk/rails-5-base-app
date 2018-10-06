@@ -1,3 +1,8 @@
+PATH
+  remote: ../../..
+  specs:
+    render_async (2.0.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -237,6 +242,7 @@ DEPENDENCIES
   poltergeist
   puma (~> 3.0)
   rails (~> 5.1.4)
+  render_async!
   rspec-rails
   sass-rails (~> 5.0)
   spring
