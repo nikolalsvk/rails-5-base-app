@@ -1,19 +1,34 @@
 <h1>no jQuery test</h1>
 
+<script>
+  document.addEventListener('ay', function() {
+    var p = document.getElementById('event-paragraph');
+    p.innerHTML = 'Event dispatched!';
+  });
+</script>
+
 <p>
   jQuery: <script>document.write(window.jQuery)</script>
 </p>
 
-<p>Wave:</p>
-<%= render_async wave_render_async_path do %>
+<br>
+<b>Wave:</b>
+<%= render_async wave_render_async_path, event_name: 'ay' do %>
   ...Loading <%= wave_render_async_path %>
 <% end %>
 
 <br>
-<p>Bump:</p>
+<b>Bump:</b>
 <%= render_async bump_render_async_path,
                  method: 'POST',
                  data: { fresh: 'AF' },
                  headers: { 'Content-Type': 'text' } do %>
   ...Loading <%= bump_render_async_path %>
 <% end %>
+
+<br>
+<b>Event dispatching:</b>
+<%= render_async wave_render_async_path, event_name: 'ay' do %>
+  ...Loading <%= wave_render_async_path %>
+<% end %>
+<p id="event-paragraph"></p>

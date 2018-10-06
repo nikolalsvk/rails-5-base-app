@@ -16,3 +16,7 @@ Then("I should see the POST partial load") do
   expect(page).to have_text("Oops, sorry, I just bumped into you :)")
   expect(page).to have_text("BTW, here's data you've sent: {:fresh=>\"AF\"}")
 end
+
+Then("I should see that event got dispatched") do
+  expect(page).to have_text("Event dispatched!")
+end
