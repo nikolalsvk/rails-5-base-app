@@ -15,19 +15,22 @@ class RenderAsyncsController < ApplicationController
 
   # GET /render_async/wave
   def wave
+    render layout: false
   end
 
   # POST /render_async/bump
   def bump
     @body = request.body.read
+    render layout: false
   end
 
   # GET /render_async/error
   def error
-    head :not_found
+    head :not_found, layout: false
   end
 
   # GET /render_async/nested
   def nested
+    render layout: false
   end
 end
