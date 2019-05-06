@@ -26,4 +26,8 @@ class RenderAsyncsController < ApplicationController
   def error
     head :not_found
   end
+
+  # GET /render_async/nested
+  def nested
+  end
 end

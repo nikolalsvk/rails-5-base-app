@@ -28,3 +28,9 @@ end
 Then("I should see that error event got dispatched") do
   expect(page).to have_text("Error event dispatched!")
 end
+
+Then("I should see that nested partial rendered") do
+  within "#nested" do
+    expect(page).to have_text("render_async here :wave:")
+  end
+end

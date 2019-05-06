@@ -57,3 +57,10 @@
   ...Loading <%= error_render_async_path %>
 <% end %>
 <p id="error-event-paragraph"></p>
+
+<br>
+<b>Nested partial:</b>
+
+<%= render_async nested_render_async_path do %>
+  ...Loading <%= nested_render_async_path %>
+<% end %>

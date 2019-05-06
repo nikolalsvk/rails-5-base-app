@@ -49,3 +49,8 @@ Feature: render_async loading partials
   Scenario: Emitting error event with jQuery
     When I visit page with render_async and with jQuery
     Then I should see that error event got dispatched
+
+  @javascript
+  Scenario: Rendering nested partial with jQuery
+    When I visit page with render_async and with jQuery
+    Then I should see that nested partial rendered

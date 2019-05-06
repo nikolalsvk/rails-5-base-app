@@ -10,5 +10,6 @@ Rails.application.routes.draw do
     get  :wave
     post :bump
     get  :error
+    get  :nested
   end
 end
