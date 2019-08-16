@@ -34,3 +34,16 @@ Then("I should see that nested partial rendered") do
     expect(page).to have_text("render_async here :wave:")
   end
 end
+
+When("I click toggl button") do
+  within "#toggle-feature" do
+    click_on "Toggle poll"
+  end
+end
+
+Then("I should see that toggled partial rendered") do
+  within "#toggle-feature" do
+    expect(page).to have_text("Oops, sorry, I just bumped into you :)")
+    expect(page).to have_text("BTW, here's data you've sent: {:fresh=>\"AF\"}")
+  end
+end
