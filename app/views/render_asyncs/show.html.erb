@@ -11,38 +11,19 @@
 <b>Wave:</b>
 <%= render_async wave_render_async_path,
                  container_id: 'ay',
-                 container_class: 'ayay' do %>
+                 container_class: 'ayay', interval: 2000, error_message: "NOOOO" do %>
   ...Loading <%= wave_render_async_path %>
 <% end %>
+
 
 <br>
 <b>Bump:</b>
 <%= render_async bump_render_async_path,
                  method: 'POST',
                  data: { fresh: 'AF' },
-                 headers: { 'Content-Type': 'text' },
-                 interval: 2000,
-                 start_poll_on_page_load: true,
-                 start_poll_event_name: 'start-right-there',
-                 stop_poll_event_name: 'stop-right-there' do %>
+                 headers: { 'Content-Type': 'text' } do %>
   ...Loading <%= bump_render_async_path %>
 <% end %>
-
-<button id='stop-poll'>Stop poll</button>
-<button id='start-poll'>Start poll</button>
-<script>
-  var stopPollElement = document.getElementById('stop-poll')
-  stopPollElement.addEventListener('click', function() {
-    var event = new Event('stop-right-there')
-    document.dispatchEvent(event)
-  })
-
-  var startPollElement = document.getElementById('start-poll')
-  startPollElement.addEventListener('click', function() {
-    var event = new Event('start-right-there')
-    document.dispatchEvent(event)
-  })
-</script>
 
 
 <br>
@@ -78,9 +59,26 @@
 <% end %>
 <p id="error-event-paragraph"></p>
 
+
 <br>
 <b>Nested partial:</b>
 
 <%= render_async nested_render_async_path do %>
   ...Loading <%= nested_render_async_path %>
 <% end %>
+
+
+<br>
+<div id="toggle-feature">
+  <b>Bump:</b>
+  <%= render_async bump_render_async_path,
+    method: 'POST',
+    data: { fresh: 'AF' },
+    headers: { 'Content-Type': 'text' },
+    interval: 2000,
+    toggle: { selector: '#toggle-poll' } do %>
+    ...Click to load <%= bump_render_async_path %> path
+  <% end %>
+
+  <button id='toggle-poll'>Toggle poll</button>
+</div>
