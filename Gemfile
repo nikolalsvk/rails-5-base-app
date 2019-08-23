@@ -34,9 +34,26 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# render_async for async loading of partials
+gem 'render_async', path: '../../../'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+end
+
+group :test do
+  # Integration testing with Cucumber
+  gem 'cucumber-rails', :require => false
+  # Does cleaning of the database in test environment
+  gem 'database_cleaner'
+  # PhantomJS - headless browser
+  gem 'phantomjs', :require => 'phantomjs/poltergeist'
+  # Driver for manipulating a browser
+  gem 'poltergeist'
+
+  # RSpec - testing framework
+  gem 'rspec-rails'
 end
 
 group :development do
