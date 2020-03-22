@@ -35,7 +35,7 @@ Then("I should see that nested partial rendered") do
   end
 end
 
-When("I click toggl button") do
+When("I click toggle button") do
   within "#toggle-feature" do
     click_on "Toggle poll"
   end

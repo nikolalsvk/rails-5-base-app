@@ -33,7 +33,7 @@ Feature: render_async loading partials with jQuery
   @javascript
   Scenario: Toggling render_async
     When I visit page with render_async and with jQuery
-    When I click toggl button
+    When I click toggle button
     Then I should see that toggled partial rendered
 
   @javascript
