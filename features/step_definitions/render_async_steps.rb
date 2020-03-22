@@ -47,3 +47,10 @@ Then("I should see that toggled partial rendered") do
     expect(page).to have_text("BTW, here's data you've sent: {:fresh=>\"AF\"}")
   end
 end
+
+Then("I should see that default events were dispatched") do
+  within '#check-default-event-dispatching' do
+    expect(page).to have_text('It loaded OK!')
+    expect(page).to have_text('It loaded badly :(!')
+  end
+end

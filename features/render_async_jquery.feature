@@ -35,3 +35,8 @@ Feature: render_async loading partials with jQuery
     When I visit page with render_async and with jQuery
     When I click toggl button
     Then I should see that toggled partial rendered
+
+  @javascript
+  Scenario: Default event dispatching
+    When I visit page with render_async and with jQuery
+    Then I should see that default events were dispatched
