@@ -6,8 +6,7 @@
   <h3>Simple request that waves:</h3>
   <%= render_async wave_render_async_path,
                    container_id: 'ay',
-                   container_class: 'ayay', 
-                   interval: 2000, 
+                   container_class: 'ayay',
                    error_message: "NOOOO" do %>
     ...Loading <%= wave_render_async_path %>
   <% end %>
@@ -98,7 +97,38 @@
 </section>
 
 <hr></hr>
+<section>
+  <div id="toggle-feature-with-event-trigger">
+    <h3>Controllable interval:</h3>
 
+    <%= render_async wave_render_async_path, container_id: 'controllable-interval', interval: 3000 %>
+
+    <button id='stop-polling'>Stop polling</button>
+    <button id='start-polling'>Start polling</button>
+
+    <script>
+      var container = document.getElementById('controllable-interval')
+      var stopPolling = document.getElementById('stop-polling')
+      var startPolling = document.getElementById('start-polling')
+
+      var triggerEventOnContainer = function(eventName) {
+        var event = new Event(eventName);
+
+        container.dispatchEvent(event)
+      }
+
+      stopPolling.addEventListener('click', function() {
+        container.innerHTML = '<p>Polling stopped</p>'
+        triggerEventOnContainer('async-stop')
+      })
+      startPolling.addEventListener('click', function() {
+        triggerEventOnContainer('async-start')
+      })
+    </script>
+  </div>
+</section>
+
+<hr></hr>
 <section>
   <div id="check-default-event-dispatching">
     <h3>Default event dispatching:</h3>

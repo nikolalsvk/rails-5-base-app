@@ -40,3 +40,11 @@ Feature: render_async loading partials with jQuery
   Scenario: Default event dispatching
     When I visit page with render_async and with jQuery
     Then I should see that default events were dispatched
+
+  @javascript
+  Scenario: Controlling interval
+    When I visit page with render_async and with jQuery
+    When I click 'Stop polling' button
+    Then I should see that the polling stopped
+    When I click 'Start polling' button
+    Then I should see that the polling started

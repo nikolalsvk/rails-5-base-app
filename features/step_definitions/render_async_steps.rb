@@ -54,3 +54,19 @@ Then("I should see that default events were dispatched") do
     expect(page).to have_text('It loaded badly :(!')
   end
 end
+
+When("I click {string} button") do |button_text|
+  click_on button_text
+end
+
+Then("I should see that the polling stopped") do
+  within '#toggle-feature-with-event-trigger' do
+    expect(page).to have_text('Polling stopped')
+  end
+end
+
+Then("I should see that the polling started") do
+  within '#toggle-feature-with-event-trigger' do
+    expect(page).to have_text('render_async here :wave:')
+  end
+end
