@@ -25,6 +25,12 @@ Then("I should see the error message") do
   expect(page).to have_text("Sorry for the error :(")
 end
 
+Then("I should see the error message after retrying") do
+  within "#error-message-retry" do
+    expect(page).to have_text("Request failed after 2 tries!")
+  end
+end
+
 Then("I should see that error event got dispatched") do
   expect(page).to have_text("Error event dispatched!")
 end

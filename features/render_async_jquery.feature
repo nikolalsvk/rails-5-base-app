@@ -21,6 +21,11 @@ Feature: render_async loading partials with jQuery
     Then I should see the error message
 
   @javascript
+  Scenario: Loading error message after retrying with jQuery
+    When I visit page with render_async and with jQuery
+    Then I should see the error message after retrying
+
+  @javascript
   Scenario: Emitting error event with jQuery
     When I visit page with render_async and with jQuery
     Then I should see that error event got dispatched
